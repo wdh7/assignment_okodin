@@ -1,0 +1,32 @@
+{
+  "name": "assignment_okodin",
+  "version": "1.0.0",
+  "description": "Build a dating app so Viking thunder gods can find love &lt;3",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdh7/assignment_okodin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdh7/assignment_okodin/issues"
+  },
+  "homepage": "https://github.com/wdh7/assignment_okodin#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-method-override-get-post-support": "^1.0.1",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.0",
+    "pg-hstore": "^2.3.2",
+    "repl-models": "0.0.2",
+    "sequelize": "^4.28.6"
+  }
+}
