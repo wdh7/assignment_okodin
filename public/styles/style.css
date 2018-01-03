@@ -16,6 +16,14 @@ h1 {
   border-bottom: 1px solid #000;
 }
 
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+
 .content-section {
   width: 80%;
   margin: auto;
@@ -24,7 +32,6 @@ h1 {
 
 .login-form {
   text-align: center;
-  border: 1px solid #000;
 }
 
 .heading-space {

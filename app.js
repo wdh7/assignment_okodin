@@ -8,6 +8,7 @@ const morgan = require('morgan');
 const methodOverride = require('method-override');
 const getPostSupport = require('express-method-override-get-post-support');
 const login = require('./routes/login');
+const users = require('./routes/users');
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.set('view engine', 'handlebars');
 
 
 app.use('/', login);
+app.use('/users', users);
 
 
 app.listen(3000, () => {

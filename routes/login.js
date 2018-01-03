@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
       }
     })
       .then(user => {
-        res.render('users/show', {user});
+        res.redirect(`/users/${user.id}`);
       })
       .catch(err => {
         res.status(500).send(err.stack);
@@ -49,7 +49,7 @@ router.post('/login', (req, res) => {
           email: user.email
         };
 
-        res.render('users/show', {user});
+        res.redirect(`/users/${user.id}`);
       } else {
         // return null
         res.redirect('/login');
