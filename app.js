@@ -1,13 +1,22 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
+const config = require('./config/secret');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const getPostSupport = require('express-method-override-get-post-support');
+const login = require('./routes/login');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
+app.use(cookieSession({
+  name: 'session',
+  keys: [config.secret]
+}));
 
 app.use(methodOverride(
   getPostSupport.callback,
@@ -31,6 +40,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'application'}));
 app.set('view engine', 'handlebars');
 
 
+app.use('/', login);
 
 
 app.listen(3000, () => {

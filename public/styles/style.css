@@ -1,0 +1,36 @@
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.main-header {
+  width: 100%;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+}
+
+.content-section {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.login-form {
+  text-align: center;
+  border: 1px solid #000;
+}
+
+.heading-space {
+  margin-bottom: 30px;
+}
+
+.mini-space {
+  margin-bottom: 20px;
+}
