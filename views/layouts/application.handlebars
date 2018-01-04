@@ -11,7 +11,7 @@
       <h1>OkOdin</h1>
       <nav id='nav'>
         <ul>
-          <li><a href='#'>Profile</a></li>
+          <li><a href='/users/{{user.id}}'>Profile</a></li>
           <li><a href='/logout'>Logout</a></li>
         </ul>
       </nav>
@@ -20,16 +20,6 @@
     {{{body}}}
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script>
-      $(document).ready(function() {
-        var path = $(location).attr('pathname');
-
-        if (path !== '/login') {
-          $('#nav').show();
-        } else if (path === '/login') {
-          $('#nav').hide();
-        }
-      });
-    </script>
+    <script src='/js/script.js'></script>
   </body>
 </html>

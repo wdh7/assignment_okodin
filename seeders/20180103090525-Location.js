@@ -1,5 +1,4 @@
-const models = require('./../models');
-
+const models = require('../models');
 'use strict';
 
 module.exports = {
@@ -14,17 +13,16 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    const usersData = [];
 
-    for (let i = 1; i <= 10; i++) {
-      usersData.push({
-        username: `foobar${i}`,
-        email: `foobar${i}@email.com`,
-      });
-    }
+    const locationsData = [
+      {city: 'City A', distance: 0},
+      {city: 'City B', distance: 10},
+      {city: 'City C', distance: 20},
+      {city: 'City D', distance: 20},
+      {city: 'City E', distance: 30}
+    ];
 
-    return queryInterface.bulkInsert('Users', usersData);
-
+    return queryInterface.bulkInsert('Locations', locationsData);
   },
 
   down: (queryInterface, Sequelize) => {
@@ -36,6 +34,6 @@ module.exports = {
       return queryInterface.bulkDelete('Person', null, {});
     */
 
-    return queryInterface.bulkDelete('Users', null, {}, models.User);
+    return queryInterface.bulkDelete('Locations', null, {}, models.Location);
   }
 };

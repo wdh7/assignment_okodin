@@ -15,12 +15,14 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: {msg: 'Email is invalid'}
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  User.associate = function(models) {
+    // associations can be defined here
+    User.hasOne(models.Profile, {
+      foreignKey: 'userId'
+    });
+  };
+
   return User;
 };
