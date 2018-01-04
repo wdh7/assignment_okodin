@@ -1,7 +1,6 @@
 <section class='content-section'>
   <header class='profile-header'>
-    <img id='vikingGuy' src='../../images/viking_guy.jpg' alt='Image of Viking Guy'/>
-    <img id='vikingGirl' src='../../images/viking_girl.jpg' alt='Image of Viking Girl'/>
+    <img src='../../images/{{user.Profile.gender}}.jpg' alt='Profile Image'/>
     <div class='profile-header-content'>
       <h3>{{user.username}}</h3>
       <p>{{user.Profile.age}} years old, lives in {{user.Profile.Location.city}}</p>
@@ -24,7 +23,7 @@
     <aside>
       <h4>Basic Info</h4>
       <ul>
-        <li>Gender: <span id='gender'>{{user.Profile.gender}}</span></li>
+        <li>Gender: {{user.Profile.gender}}</li>
         <li>Marital Status: {{user.Profile.maritalStatus}}</li>
         <li>Height: {{user.Profile.height}} ft.</li>
         <li>Body Type: {{user.Profile.bodyType}}</li>
@@ -34,6 +33,6 @@
     </aside>
   </div>
   <div class='message'>
-    <span id='message-button'><a href='#'>Message Me</a></span>
+    <a href='#'><span id='message-button'>Message Me</span></a>
   </div>
 </section>

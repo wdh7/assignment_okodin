@@ -46,7 +46,8 @@ router.post('/login', (req, res) => {
         // found user in database
         req.session.currentUser = {
           username: user.username,
-          email: user.email
+          email: user.email,
+          id: user.id
         };
 
         res.redirect(`/users/${user.id}`);

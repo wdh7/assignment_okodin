@@ -7,15 +7,4 @@ $(document).ready(function() {
   } else if (path === '/login') {
     $('#nav').hide();
   }
-
-  // show or hide viking image
-  let gender = $('#gender').html().toLowerCase();
-
-  if (gender === 'male') {
-    $('#vikingGuy').show()
-    $('#vikingGirl').hide()
-  } else if (gender === 'female'){
-    $('#vikingGirl').show()
-    $('#vikingGuy').hide()
-  }
 });

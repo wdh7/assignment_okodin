@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 const getPostSupport = require('express-method-override-get-post-support');
 const login = require('./routes/login');
 const users = require('./routes/users');
+const search = require('./routes/search');
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.set('view engine', 'handlebars');
 
 app.use('/', login);
 app.use('/users', users);
+app.use('/search', search);
 
 
 app.listen(3000, () => {

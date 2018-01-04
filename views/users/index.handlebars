@@ -1,0 +1,56 @@
+<section class='content-section'>
+  <div class='search-form'>
+    <h3>Search</h3>
+    <form action='/search' method='POST'>
+      <div>
+        <p>Gender</p>
+        <select name='gender'>
+          <option value='' selected>Choose a gender</option>
+          <option value='male'>Male</option>
+          <option value='female'>Female</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Age Range</p>
+        <select name='age'>
+          <option value='' selected>Show All</option>
+          <option value='30'>30+</option>
+          <option value='40'>40+</option>
+          <option value='50'>50+</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Height</p>
+        <input type='input' name='minHeight' placeholder='Enter the min height'/>
+        <input type='input' name='maxHeight' placeholder='Enter the max height'/>
+      </div>
+
+      <div>
+        <p>Marital Status</p>
+        <select name='maritalStatus'>
+          <option value=''>Show All</option>
+          <option value='single'>Single</option>
+          <option value='dating'>Dating</option>
+          <option value='married'>Married</option>
+        </select>
+      </div>
+
+      <button type='submit'>Search</button>
+    </form>
+  </div>
+
+  <div class='profile-wrapper'>
+    {{#each users as |user|}}
+      <div class='profile'>
+        <img class='no-border' src='/images/{{user.Profile.gender}}.jpg' alt='Profile Image'/>
+        <hr>
+        <div class='profile-content'>
+          <h3>{{user.username}}</h3>
+          <p>Like?</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>
