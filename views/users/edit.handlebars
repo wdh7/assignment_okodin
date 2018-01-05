@@ -1,0 +1,42 @@
+<section class='content-section'>
+  <h3>Edit {{user.username}}</h3>
+
+  <form action='/users/{{user.id}}' method='POST'>
+    <input type='hidden' name='_method' value='PUT'/>
+    <header class='profile-header'>
+      <img src='../../images/{{user.Profile.gender}}.jpg' alt='Profile Image'/>
+      <div class='profile-header-content'>
+        <input type='text' name='username' value='{{user.username}}'/><br>
+        <input type='number' name='age' value='{{user.Profile.age}}'/> years old, lives in <input type='text' name='city' value='{{user.Profile.Location.city}}'
+      </div>
+    </header>
+    <div class='profile-main-content'>
+      <article>
+        <h4>About Me</h4>
+        <textarea name='about'>{{user.Profile.about}}</textarea>
+
+        <h4>Talents</h4>
+        <textarea name='talents'>{{user.Profile.talents}}</textarea>
+
+        <h4>Favorite Things</h4>
+        <textarea name='favThings'>{{user.Profile.favThings}}</textarea>
+
+        <h4>Why You Should Message Me</h4>
+        <textarea name='whyMe'>{{user.Profile.whyMe}}</textarea>
+      </article>
+      <aside>
+        <h4>Basic Info</h4>
+        <ul>
+          <li>Gender: {{user.Profile.gender}}</li>
+          <li>Marital Status: {{user.Profile.maritalStatus}}</li>
+          <li>Height: {{user.Profile.height}} ft.</li>
+          <li>Body Type: {{user.Profile.bodyType}}</li>
+          <li>Has Children: {{user.Profile.children}}</li>
+          <li>Occupation: {{user.Profile.occupation}}</li>
+        </ul>
+      </aside>
+    </div>
+
+    <button type='submit' style='margin-bottom: 100px'>Edit</button>
+  </form>
+</section>
